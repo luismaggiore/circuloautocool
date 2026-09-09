@@ -154,12 +154,6 @@
                 </div>
               </div>
 
-              <!-- BADGES INFORMATIVOS -->
-              <div class="p-3 bg-light border-top d-flex flex-wrap gap-2 justify-content-around text-center small text-muted">
-                <div><i class="bi bi-check-circle-fill text-success me-1"></i> Stock Disponible</div>
-                <div><i class="bi bi-shield-check text-primary me-1"></i> Garantía 6 Meses</div>
-                <div><i class="bi bi-tools text-danger me-1"></i> Instalación en Las Condes</div>
-              </div>
             </div>
           </div>
 
@@ -181,19 +175,6 @@
               <p class="site-card-text mb-4">
                 Kits de iluminación LED de alta intensidad lumínica con disipador térmico de aluminio aeronáutico y decodificador Canbus integrado. Evita testigos de ampolleta quemada y parpadeos en tableros digitales.
               </p>
-
-              <!-- OPCIÓN DE INSTALACIÓN EN TALLER -->
-              <div class="p-3 mb-4 rounded border" style="background-color: #f8fafc; border-color: var(--perf-border-color) !important;">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="checkInstallation" onchange="toggleInstallationOption()">
-                  <label class="form-check-label fw-bold text-dark cursor-pointer" for="checkInstallation">
-                    Incluir servicio de instalación en taller Las Condes (+ $10.000)
-                  </label>
-                </div>
-                <div class="form-text text-muted mt-1 small">
-                  Instalación inmediata por mecánicos especializados. Incluye regulación y alineación de haz de luz.
-                </div>
-              </div>
 
               <!-- ESPECIFICACIONES TÉCNICAS DESTACADAS -->
               <div class="vehicle-specs-grid mb-4">
@@ -224,20 +205,13 @@
               </div>
 
               <!-- ACCIONES DE COTIZACIÓN Y COMPRA -->
-              <div class="d-grid gap-2 mb-4">
-                <a id="btnWhatsappProduct" class="btn-autocool w-100 justify-content-center py-3" href="https://wa.me/message/WBLU24XQBJSID1?text=Hola,%20quisiera%20consultar%20por%20el%20Kit%20Ampolletas%20LED%20Canbus" target="_blank" rel="noopener">
-                  <span class="back-arrow"><i class="bi bi-whatsapp"></i></span>
-                  <span class="btn-text" id="btnWhatsappText">Consultar o Comprar por WhatsApp</span>
-                  <span class="front-arrow"><i class="bi bi-whatsapp"></i></span>
+              <div class="pt-2">
+                <a class="btn-autocool d-inline-flex" href="https://wa.me/message/WBLU24XQBJSID1?text=Hola,%20quisiera%20consultar%20por%20el%20Kit%20Ampolletas%20LED%20Canbus" target="_blank" rel="noopener">
+                  <span class="back-arrow"><i class="bi bi-arrow-right"></i></span>
+                  <span class="btn-text">Consultar por WhatsApp</span>
+                  <span class="front-arrow"><i class="bi bi-arrow-right"></i></span>
                 </a>
               </div>
-
-              <!-- BENFICIOS COMPLEMENTARIOS -->
-              <ul class="list-unstyled mb-0 small text-muted border-top pt-3">
-                <li class="mb-2"><i class="bi bi-shield-check text-success me-2 fs-6"></i><strong>Garantía Autocool:</strong> 6 meses de garantía directa.</li>
-                <li class="mb-2"><i class="bi bi-truck text-primary me-2 fs-6"></i><strong>Despachos:</strong> Envíos a todo Chile o retiro sin costo en Av. Las Condes #7495.</li>
-                <li><i class="bi bi-arrow-repeat text-danger me-2 fs-6"></i><strong>Compatibilidad:</strong> Asesoría previa por número de chasis (VIN).</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -252,9 +226,6 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button class="nav-link fw-bold" id="compat-tab" data-bs-toggle="tab" data-bs-target="#compat-pane" type="button" role="tab">Compatibilidad Vehicular</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link fw-bold" id="garantia-tab" data-bs-toggle="tab" data-bs-target="#garantia-pane" type="button" role="tab">Garantía &amp; Instalación</button>
                 </li>
               </ul>
               
@@ -297,24 +268,6 @@
                     <div class="col-md-3 col-6"><div class="p-2 border rounded text-center bg-light">Peugeot / Citroën (208, 301, C-Elysée)</div></div>
                     <div class="col-md-3 col-6"><div class="p-2 border rounded text-center bg-light">Ford / RAM (EcoSport, Ranger)</div></div>
                   </div>
-                </div>
-
-                <!-- PESTAÑA 3: GARANTÍA E INSTALACIÓN -->
-                <div class="tab-pane fade" id="garantia-pane" role="tabpanel">
-                  <h4 class="h5 mb-3">Servicio Profesional en Las Condes</h4>
-                  <p>
-                    En Círculo Autocool no solo te vendemos el producto, sino que garantizamos su correcta instalación y calibración de haz de luz en nuestro taller especializado.
-                  </p>
-                  <ul class="diff-feature-list">
-                    <li class="diff-feature-item">
-                      <i class="bi bi-check-circle-fill text-success"></i>
-                      <span><strong>Instalación Profesional:</strong> Realizada por electricistas automotrices certificados sin cortar ningún cable ni alterar el sistema eléctrico original.</span>
-                    </li>
-                    <li class="diff-feature-item">
-                      <i class="bi bi-check-circle-fill text-success"></i>
-                      <span><strong>Garantía Integral:</strong> 6 meses de garantía cubre fallas de ampolleta, driver o parpadeo. Cambio inmediato en local.</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
 
@@ -484,26 +437,6 @@
         document.getElementById('mainGalleryImage').src = src;
         document.querySelectorAll('.vehicle-thumb-item').forEach(item => item.classList.remove('active'));
         element.classList.add('active');
-      }
-
-      // Cálculo dinámico de valor con Instalación
-      function toggleInstallationOption() {
-        const check = document.getElementById('checkInstallation');
-        const priceDisplay = document.getElementById('productPriceDisplay');
-        const btnWa = document.getElementById('btnWhatsappProduct');
-        const btnWaText = document.getElementById('btnWhatsappText');
-
-        if (check.checked) {
-          priceDisplay.innerText = '$49.990';
-          const msg = encodeURIComponent('Hola, quisiera comprar el Kit Ampolletas LED Canbus con servicio de Instalación en Taller por $49.990.');
-          btnWa.href = 'https://wa.me/message/WBLU24XQBJSID1?text=' + msg;
-          btnWaText.innerText = 'Comprar con Instalación por WhatsApp';
-        } else {
-          priceDisplay.innerText = '$39.990';
-          const msg = encodeURIComponent('Hola, quisiera consultar por el Kit Ampolletas LED Canbus por $39.990.');
-          btnWa.href = 'https://wa.me/message/WBLU24XQBJSID1?text=' + msg;
-          btnWaText.innerText = 'Consultar o Comprar por WhatsApp';
-        }
       }
     </script>
   </body>
