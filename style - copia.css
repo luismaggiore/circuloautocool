@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Special+Gothic+Expanded+One&display=swap");
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
+}
+
+.container-fluid {
+  padding: 0px clamp(10px, 6vw, 1000px);
+}
+h1 {
+  font-size: clamp(20px, 8vw, 1000px);
+  font-variant: all-small-caps;
+  line-height: 0.3;
+  color: #464646;
+  font-family: "Michroma", sans-serif;
+}
+.car {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  margin-bottom: -40px;
+}
+.car::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: #c1e6d5;
+  z-index: -2;
+  border-radius: 1000px;
+}
+.car-center {
+  width: 100%;
+}
+.rueda-der {
+  position: absolute;
+  bottom: 4%;
+  left: 10%;
+  width: 15%;
+}
+.rueda-izq {
+  position: absolute;
+  bottom: 4%;
+  right: 12%;
+  width: 15%;
+}
+.sombra {
+  width: 90%;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  z-index: -1;
+  bottom: 4%;
+  opacity: 0.5;
+  left: 5%;
+  border-radius: 100%;
+  filter: blur(5px);
+}
+/* Ruedas giratorias */
+.rueda-der,
+.rueda-izq {
+  transform-origin: 50% 50%; /* centro de la rueda */
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

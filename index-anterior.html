@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AUTOCOOL - Versión Anterior</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.typekit.net/ltt1zbs.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="logo-nav.webp" alt="AUTOCOOL"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="py-5">
+      <header class="mt-5" style="position:relative">
+        
+        <img class="logo-seal" src="logo.webp">
+        <div class="">
+        <p class="title-marca">
+          Círculo Autocool</p>
+          <div class="car-carousel">
+            <!-- Slide 1: Sedan -->
+            <div class="car-slide active" id="slide-1">
+              <div class="car car-sedan">
+                <img class="car-center" src="cars/sedan.webp" alt="Sedan" />
+                <img class="rueda-der" src="cars/rueda-sedan.webp" alt="Rueda Delantera" />
+                <img class="rueda-izq" src="cars/rueda-sedan.webp" alt="Rueda Trasera" />
+                <div class="sombra"></div>
+              </div>
+            </div>
+            <!-- Slide 2: SUV -->
+            <div class="car-slide" id="slide-2">
+              <div class="car car-suv">
+                <img class="car-center" src="cars/suv.webp" alt="SUV" />
+                <img class="rueda-der" src="cars/rueda-suv.webp" alt="Rueda Delantera" />
+                <img class="rueda-izq" src="cars/rueda-suv.webp" alt="Rueda Trasera" />
+                <div class="sombra"></div>
+              </div>
+            </div>
+            <!-- Slide 3: Muscle Car -->
+            <div class="car-slide" id="slide-3">
+              <div class="car car-muscle">
+                <img class="car-center" src="cars/muscle.webp" alt="Muscle Car" />
+                <img class="rueda-der" src="cars/rueda-muscle.webp" alt="Rueda Delantera" />
+                <img class="rueda-izq" src="cars/rueda-muscle.webp" alt="Rueda Trasera" />
+                <div class="sombra"></div>
+              </div>
+            </div>
+            <!-- Slide 4: Jeep -->
+            <div class="car-slide" id="slide-4">
+              <div class="car car-jeep">
+                <img class="car-center" src="cars/jeep.webp" alt="Jeep" />
+                <img class="rueda-der" src="cars/rueda-jeep.webp" alt="Rueda Delantera" />
+                <img class="rueda-izq" src="cars/rueda-jeep.webp" alt="Rueda Trasera" />
+                <div class="sombra"></div>
+              </div>
+            </div>
+          </div>
+     </div>
+        <h1 class="text-center hero-title ">
+          Tu taller mecánico de confianza en Las Condes especializado en aire acondicionado y mecánica general
+        </h1>
+        <div class="cta text-center mt-4 justify-content-center gap-3">
+          <a class="btn-autocool" href="https://wa.me/message/WBLU24XQBJSID1" target="_blank">
+            <span class="back-arrow"><i class="bi bi-arrow-right"></i></span>
+            <span class="btn-text">RESERVA TU SERVICIO</span>
+            <span class="front-arrow"><i class="bi bi-arrow-right"></i></span>
+          </a>
+          <a class="btn-autocool" href="https://wa.me/message/WBLU24XQBJSID1" target="_blank">
+            <span class="back-arrow"><i class="bi bi-arrow-right"></i></span>
+            <span class="btn-text">AGENDA TU CITA</span>
+            <span class="front-arrow"><i class="bi bi-arrow-right"></i></span>
+          </a>
+        </div>
+      </header>
+    </main>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <section class="perf-services-section py-5" id="servicios">
+      <div class="container-fluid">
+        <!-- Encabezado de la Sección -->
+        <div class="text-center">
+          <span class="perf-badge">Servicios integrales</span>
+          <h2 class="perf-section-title">SOLUCIONES PARA TU VEHÍCULO</h2>
+          <p class="perf-section-subtitle mx-auto">
+            Servicio técnico multimarca con tecnología de diagnóstico avanzado y repuestos garantizados.
+          </p>
+        </div>
+
+        <!-- Grid 3x2 de Servicios -->
+        <div class="perf-grid">
+          <!-- Tarjeta 1: Climatización -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">SISTEMA A/C</span>
+              <span class="perf-meta-num">01</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/aire.jpg" alt="Climatización y Aire Acondicionado" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Climatización &amp; Aire Acondicionado</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Mecánica General -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">MOTOR &amp; TREN</span>
+              <span class="perf-meta-num">02</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/general.jpg" alt="Mecánica General" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Mecánica General</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Mantenimiento Preventivo -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">PREVENCIÓN</span>
+              <span class="perf-meta-num">03</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/mantenimiento.jpg" alt="Mantenimiento Preventivo" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Mantenimiento Preventivo por Pauta</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Diagnóstico Electrónico -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">ELECTRÓNICA</span>
+              <span class="perf-meta-num">04</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/scanner.jpg" alt="Diagnóstico Electrónico" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Diagnóstico Electrónico &amp; Escáner</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 5: Frenos y Suspensión -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">SEGURIDAD</span>
+              <span class="perf-meta-num">05</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/frenos.jpg" alt="Frenos y Suspensión" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Sistema de Frenos &amp; Suspensión</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6: Electricidad y Baterías -->
+          <div class="perf-card">
+            <div class="perf-crosshair top-left">+</div>
+            <div class="perf-crosshair top-right">+</div>
+            <div class="perf-crosshair bottom-left">+</div>
+            <div class="perf-crosshair bottom-right">+</div>
+            <div class="perf-card-meta">
+              <span class="perf-meta-category">ENERGÍA</span>
+              <span class="perf-meta-num">06</span>
+            </div>
+            <div class="perf-card-img-wrapper">
+              <img src="services/bateria.jpg" alt="Electricidad Automotriz" class="perf-card-img" />
+            </div>
+            <h3 class="perf-card-title">Electricidad Automotriz &amp; Baterías</h3>
+            <div class="perf-card-action">
+              <a href="https://wa.me/message/WBLU24XQBJSID1" target="_blank" class="perf-btn-group">
+                <span class="perf-btn-main">MÁS INFORMACIÓN</span>
+                <span class="perf-btn-icon"><i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom script -->
+    <script src="script.js"></script>
+  </body>
+</html>

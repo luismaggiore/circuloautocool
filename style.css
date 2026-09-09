@@ -1,0 +1,2778 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Special+Gothic+Expanded+One&display=swap");
+@import url("https://use.typekit.net/ltt1zbs.css");
+
+/* ==========================================================================
+   TIPOGRAFÍA LOCAL ORIGIN
+   ========================================================================== */
+@font-face {
+  font-family: "Origin";
+  src: url("Web-TT/Origin-RegularText.woff2") format("woff2"),
+       url("Web-TT/Origin-RegularText.woff") format("woff"),
+       url("Web-TT/Origin-RegularText.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Origin";
+  src: url("Web-TT/Origin-MediumText.woff2") format("woff2"),
+       url("Web-TT/Origin-MediumText.woff") format("woff"),
+       url("Web-TT/Origin-MediumText.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Origin";
+  src: url("Web-TT/Origin-BoldText.woff2") format("woff2"),
+       url("Web-TT/Origin-BoldText.woff") format("woff"),
+       url("Web-TT/Origin-BoldText.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fuente Variable Origin */
+@font-face {
+  font-family: "Origin-VF";
+  src: url("fonts/Origin/Origin/Variable-TT/Origin-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN DE CADA AUTO (EDITAR AQUÍ FÁCILMENTE)
+   ==========================================================================
+   Modifica las variables a continuación para ajustar individualmente la 
+   posición vertical de cada vehículo y la posición/tamaño de sus ruedas.
+
+   - --auto-y            : Posición vertical del auto completo (sube con valores negativos como -10px o -2%, baja con valores positivos como 10px o 2%)
+   - --rueda-delantera-x : Posición horizontal de la rueda delantera (left)
+   - --rueda-delantera-y : Posición vertical (desde abajo/bottom)
+   - --rueda-delantera-w : Ancho / tamaño de la rueda delantera
+
+   - --rueda-trasera-x   : Posición horizontal de la rueda trasera (right)
+   - --rueda-trasera-y   : Posición vertical (desde abajo/bottom)
+   - --rueda-trasera-w   : Ancho / tamaño de la rueda trasera
+   ========================================================================== */
+
+/* 1. SEDAN */
+.car-sedan {
+  --auto-y: 0px;
+
+  --rueda-delantera-x: 12.5%;
+  --rueda-delantera-y: 2%;
+  --rueda-delantera-w: 14.5%;
+
+  --rueda-trasera-x: 14.9%;
+  --rueda-trasera-y: 2%;
+  --rueda-trasera-w: 14.5%;
+}
+
+/* 2. SUV */
+.car-suv {
+  --auto-y: 7%;
+
+  --rueda-delantera-x: 10.5%;
+  --rueda-delantera-y: 5.5%;
+  --rueda-delantera-w: 16%;
+
+  --rueda-trasera-x: 11.5%;
+  --rueda-trasera-y: 5.5%;
+  --rueda-trasera-w: 16%;
+}
+
+/* 3. MUSCLE CAR */
+ .car-muscle {
+   --auto-y: 12%;
+   --rueda-delantera-x: 15%;
+   --rueda-delantera-y: 6.5%;
+   --rueda-delantera-w: 14.7%;
+   --rueda-trasera-x: 12.1%;
+   --rueda-trasera-y: 6.5%;
+   --rueda-trasera-w: 15%;
+ }
+/* 4. JEEP */
+.car-jeep {
+  --auto-y: 14%;
+  --rueda-delantera-x: 14%;
+  --rueda-delantera-y: 8%;
+  --rueda-delantera-w: 15%;
+  --rueda-trasera-x: 16%;
+  --rueda-trasera-y: 8%;
+  --rueda-trasera-w: 15%;
+} 
+/* 5. AUTO 5 */
+.car-auto5 {
+  --auto-y: 1%;
+  --rueda-delantera-x: 12.5%;
+  --rueda-delantera-y: 2%;
+  --rueda-delantera-w: 15.1%;
+  --rueda-trasera-x: 15.4%;
+  --rueda-trasera-y: 2%;
+  --rueda-trasera-w: 15.1%;
+}
+/* 6. AUTO 6 */
+.car-auto6 {
+  --auto-y: 7%;
+  --rueda-delantera-x: 12.4%;
+  --rueda-delantera-y: 4.9%;
+  --rueda-delantera-w: 16%;
+  --rueda-trasera-x: 11.3%;
+  --rueda-trasera-y: 4.9%;
+  --rueda-trasera-w: 16%;
+}
+
+:root {
+  /* Color de marca (azul Autocool) */
+  --perf-accent-blue: #0066ff;
+  --perf-accent-blue-rgb: 0, 102, 255; /* mismo azul, para usar con rgba() en fondos translúcidos */
+  --perf-accent-blue-text: #0052cc; /* Azul accesible para textos y badges en fondo claro (4.90:1 WCAG AA) */
+  --perf-accent-blue-hover: #0052cc;
+
+  /* Rojo del hero (banda del carrusel) reutilizado en el marquee de Nosotros */
+  --color-brand-red: rgb(221, 0, 0);
+
+  /* Texto y bordes sobre fondos claros */
+  --perf-text-dark: #111111;
+  --perf-text-muted: #666666;
+  --perf-border-color: #e2e2e2;
+  --perf-crosshair-color: #c5c5c5;
+  --color-white: #ffffff;
+
+  /* Radios y transiciones reutilizados en botones/tarjetas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 50px;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Elevación de tarjetas al hover (misma escala en todo el sitio) */
+  --lift-sm: -2px;
+  --lift-md: -4px;
+  --lift-lg: -6px;
+
+  /* Fondos oscuros compartidos (footer, blog, dropdowns) */
+  --color-ink: #121215;
+  --color-ink-soft: #0a0a0c;
+  --color-surface-muted: #f8f9fa;
+  --color-muted-on-dark: #a0a0a8; /* texto secundario sobre fondos oscuros (footer, blog) */
+
+  --unit: 10vh;
+}
+
+body {
+  overflow-x: hidden; /* Evita scrollbars horizontales en la página */
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Origin", "Origin-VF", sans-serif;
+  letter-spacing: -0.02rem;
+  background: radial-gradient(circle at 50% -90%, rgba(255, 255, 255, 1) 0%, rgb(240, 240, 240) 100%);
+}
+.logo-seal {
+  position: absolute;
+  top: 20px;
+  right: 1.2%;
+  transform:rotate(10deg);
+  width: 140px;
+  z-index: 2; /* Asegura que el logo esté detrás del texto */
+}
+.container-fluid {
+  padding: 0px clamp(10px, 6vw, 1000px);
+}
+
+/* Sección Superior por Encima del Carrusel (Degradé Radial Azul) */
+.hero-top-blue {
+  padding-top: clamp(20px, 4vh, 70px);
+  padding-bottom: 0rem;
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+/* Tagline elegante "BIENVENIDO AL" en azul (sin extender) */
+.welcome-box {
+  margin-bottom: 0.3rem;
+}
+
+.welcome-subtitle {
+
+    font-family: "grtsk-vf", sans-serif;
+      font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400;
+      font-weight: 500;
+      letter-spacing: -0.07vw;
+      font-size: clamp(16px, 1vw, 2.3rem);
+      color: var(--perf-accent-blue-text);
+      border: rgba(128, 128, 128, 0.459) solid 1px;
+      display: block;
+      max-width: fit-content;
+      padding: 5px 20px 2px 20px;
+      margin: auto;
+      margin-bottom: 30px;
+      font-weight: 600;
+
+  display: inline-block;
+}
+
+.title-marca {
+  font-size: clamp(20px, 7vw, 1000px);
+  color: rgb(54, 54, 54) !important;  
+  text-transform: uppercase; 
+  font-family: "grtsk-vf", sans-serif;
+  font-variation-settings: "slnt" 0, "wdth" 150, "wght" 900;
+  position: relative;
+  letter-spacing: -0.5vw;
+  line-height: 0.75;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-top: 1.7vw !important;
+  display: block;
+  pointer-events: none; /* Evita que el texto interfiera con los clics en el carrusel */
+  text-align: center;
+  z-index: 1;
+}
+
+
+header {
+  padding: 75px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+header.home-hero {
+  min-height: 100vh;
+}
+.hero-content{
+  background: var(--color-brand-red);
+  width:100%;
+  z-index:2;
+  margin-bottom:30px;
+  padding-top:5px;
+}
+.hero-title {
+  color: var(--perf-text-dark);
+  font-family: "grtsk-vf", sans-serif;
+  font-variation-settings: "slnt" 0, "wdth" 80, "wght" 400;
+  font-size: clamp(1.05rem, 1.2vw, 1.7rem);
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  margin: 0.7rem auto 0.8rem auto !important;
+  position: relative;
+  display: block;
+  pointer-events: none; /* Evita que el texto interfiera con los clics en el carrusel */
+  text-align: center;
+  z-index: 2;
+}
+.hero-content .hero-title{
+  color:white;
+}
+.navbar-brand img{
+  width:100px;
+}
+/* Óvalo de Fondo Estacionario (Centrado detrás de H1) */
+h1::before {
+  content: " ";
+  position: absolute;
+  width: 30%; /* Ancho proporcional al carrusel para englobar el texto */
+  left: 35%;
+  aspect-ratio: 1/1;
+  background-color: #c1e6d5; /* Verde por defecto */
+  z-index: -2; /* Posicionado detrás de los textos y autos */
+  border-radius: 100%;
+  opacity: 0;
+  transition: background-color 0.6s ease;
+}
+.btn-autocool {
+  background:transparent;
+  color: black;
+  display:flex;
+  gap:2px;
+      text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  width:fit-content;
+  border: none;
+  padding: 0;
+  font: inherit;
+  appearance: none;
+
+  position: relative;
+}
+.btn-autocool .btn-text {
+  position: relative;
+  z-index: 2;
+    background-color: var(--perf-accent-blue);
+      color: var(--color-white);
+      text-decoration: none;
+  font-family: "grtsk-vf", sans-serif;
+    font-variation-settings: "slnt" 0, "wdth" 80, "wght" 400;
+          font-size: 1.2rem;
+          line-height: 1.2;
+      letter-spacing: 0.08em;
+      font-variant-caps: all-small-caps;
+      padding: 0.75rem 1.1rem;
+      display: flex;
+      align-items: center;
+      border-radius: 100px 0px 0px 100px;
+      justify-content: center;
+      transition: all 0.25s ease;
+}
+.btn-autocool .back-arrow {
+  position: absolute;
+  top:0px;
+  left:-54px;
+  background-color: rgb(42, 42, 121);
+    color: var(--color-white);
+    padding: 0.75rem 1.1rem;
+      transition: all 0.32s ease;
+}
+.btn-autocool .front-arrow {
+  right:0px;
+  background-color: rgb(42, 42, 121);
+        border-radius: 0px 100px 100px 0px;
+  color: var(--color-white);
+  padding: 0.75rem 1.1rem;transition: all 0.25s ease;
+ 
+}
+.btn-autocool:hover .back-arrow {
+  transform: translate(54px,0);
+        border-radius: 100px 0px 0px 100px;
+}
+.btn-autocool:hover .btn-text {
+  transform: translate(53px, 0);
+          border-radius: 0px 100px 100px 0px;
+}
+.btn-autocool:hover .front-arrow {
+  transform: translate(51px,0);
+}
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Transiciones de color para el óvalo de fondo */
+h1.slide-1-active::before {
+  background-color: #c1e6d5; /* Verde (Sedan) */
+}
+
+h1.slide-2-active::before {
+  background-color: #c1d5e6; /* Azul claro (SUV) */
+}
+
+h1.slide-3-active::before {
+  background-color: #e6c1c1; /* Rojo suave (Muscle Car) */
+}
+
+h1.slide-4-active::before {
+  background-color: #e6d8c1; /* Arena / Dorado (Jeep) */
+}
+
+h1.slide-5-active::before {
+  background-color: #d5c1e6; /* Violeta suave (Auto 5) */
+}
+
+h1.slide-6-active::before {
+  background-color: #c1e6e4; /* Turquesa suave (Auto 6) */
+}
+
+/* Contenedor del Carrusel (Restaurado a escala grande) */
+.car-carousel {
+  position: relative;
+  width: 100%; /* 50% del ancho de la pantalla, grande y centrado como el original */
+  height: clamp(65px, 15vw, 500px); /* Altura proporcional */
+  margin: 0px auto 0px auto; /* Centrado y control del sándwich vertical de texto */
+  overflow: hidden; /* Permite al auto entrar y salir de los límites de la pantalla */
+  z-index: 3;
+  background: radial-gradient(circle at 50% -90%, rgb(35, 113, 214) 0%, rgb(55, 81, 131) 100%);
+}
+
+/* Estructura de los Slides (Solo el activo es visible) */
+.car-slide {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Autos, ruedas y sombras ubicados POR ENCIMA del logo */
+}
+
+/* Control del tamaño del auto en el carrusel (centrado dentro de la franja) */
+.car-slide .car {
+  width: 45%; /* Ajusta este porcentaje si deseas hacerlo más grande o más pequeño */
+}
+
+/* Solo el slide activo se muestra y permite interacciones */
+.car-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Componente Auto (Ocupa el ancho completo del carrusel) */
+.car {
+  position: relative;
+  width: 100%;
+  transform: scaleX(-1) translateY(var(--auto-y, 0px)); /* Espejo horizontal constante + desplazamiento vertical individual por auto */
+}
+
+.car-center {
+  width: 100%;
+}
+
+.rueda-der {
+  position: absolute;
+  bottom: var(--rueda-delantera-y, 4%);
+  left: var(--rueda-delantera-x, 10%);
+  width: var(--rueda-delantera-w, 15%);
+}
+
+.rueda-izq {
+  position: absolute;
+  bottom: var(--rueda-trasera-y, 4%);
+  right: var(--rueda-trasera-x, 12%);
+  width: var(--rueda-trasera-w, 15%);
+}
+
+
+
+.rueda-der,
+.rueda-izq {
+  transform-origin: 50% 50%;
+}
+
+
+/* --- ANIMACIÓN SECUENCIAL --- */
+
+/* Movimiento aplicado sobre el SLIDE WRAPPER para no interferir con el transform: scaleX(-1) del auto */
+.car-slide.active {
+  animation: slideMove 4s linear forwards;
+}
+
+.car-slide.active .rueda-der,
+.car-slide.active .rueda-izq {
+  animation: wheelRotate 4s linear forwards;
+}
+
+/* Desplazamiento del Auto (Entrada, parada y aceleración en una sola secuencia de 4 segundos) */
+@keyframes slideMove {
+  0% {
+    transform: translate3d(-100vw, 0, 0) skewX(-10deg);
+    animation-timing-function: cubic-bezier(
+      0.15,
+      0.85,
+      0.35,
+      1
+    ); /* Entrada rápida con frenado suave */
+  }
+  30% {
+    /* Llega al centro y se detiene en el segundo 1.2 (30% de 4.0s) */
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    animation-timing-function: linear;
+  }
+  70% {
+    /* Permanece inmóvil hasta el segundo 2.8 (70% de 4.0s) */
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    animation-timing-function: cubic-bezier(
+      0.75,
+      0,
+      0.85,
+      0.25
+    ); /* Aceleración de salida */
+  }
+  100% {
+    /* Sale por la derecha en el segundo 4.0 */
+    transform: translate3d(100vw, 0, 0) skewX(6deg);
+  }
+}
+
+/* Rotación de Ruedas.
+   Como el auto tiene scaleX(-1), usamos rotación negativa en CSS
+   para obtener rotación en sentido horario física en la pantalla. */
+@keyframes wheelRotate {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.15, 0.85, 0.35, 1);
+  }
+  30% {
+    transform: rotate(-720deg); /* Gira 2 vueltas al entrar */
+    animation-timing-function: linear;
+  }
+  70% {
+    transform: rotate(-720deg); /* Frena y queda quieto en el centro */
+    animation-timing-function: cubic-bezier(0.75, 0, 0.85, 0.25);
+  }
+  100% {
+    transform: rotate(-1800deg); /* Gira rápido al salir */
+  }
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+  :root{
+      --unit: 5vh;
+  }
+  .title-marca {
+      font-size: clamp(20px, 10vw, 2000px);
+    }
+  h1::before {
+    width: 90%;
+    left: 5%;
+  }
+  .car-carousel {
+    width: 100%;
+   height: clamp(200px, 20vw, 400px);
+  }
+  .car-slide .car {
+    bottom:-7vw;
+  }
+  .car-slide .car { 
+    width: 70%;
+  }
+  .hero-title {
+    max-width: 90%;
+    margin-bottom:2rem !important;
+  }
+  .hero-top-blue {
+    padding-top: clamp(60px, 12vh, 180px);
+  }
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+  .cta .btn-autocool {
+    margin: 0 auto;
+  }
+}
+
+.navbar .container {
+  border: #464646 solid 1px;
+  padding: 5px 40px;
+  padding-right:10px;
+  background-color: rgba(255, 255, 255, 0.808);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+    font-family: "grtsk-vf", sans-serif;
+      font-variation-settings: "slnt" 0, "wdth" 80, "wght" 400;
+}
+
+/* ==========================================================================
+   SECCIÓN PROVISORIA: PREVIEW Y ALINEACIÓN DE AUTOS (7 MODELOS)
+   ========================================================================== */
+.preview-cars-section {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 3rem 1.5rem;
+  border-top: 4px solid var(--perf-accent-blue);
+  border-bottom: 4px solid var(--perf-accent-blue);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.preview-cars-section h2 {
+  font-family: "Origin", sans-serif;
+  color: #38bdf8;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.preview-cars-section .preview-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.preview-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+
+.preview-card:hover {
+  border-color: var(--perf-accent-blue);
+}
+
+.preview-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.6rem;
+}
+
+.preview-card-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #38bdf8;
+  margin: 0;
+}
+
+.preview-card-badge {
+  background: var(--perf-accent-blue);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.preview-stage {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: radial-gradient(circle at 50% -90%, rgb(35, 113, 214) 0%, rgb(55, 81, 131) 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid #475569;
+}
+
+.preview-stage .car {
+  width: 75%;
+  position: relative;
+}
+
+.preview-controls {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  border: 1px solid #334155;
+}
+
+.preview-control-group {
+  margin-bottom: 0.75rem;
+}
+
+.preview-control-group label {
+  display: flex;
+  justify-content: space-between;
+  color: #cbd5e1;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.preview-control-group label span.val {
+  color: #38bdf8;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.preview-control-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--perf-accent-blue);
+  cursor: pointer;
+}
+
+.preview-css-box {
+  background: #020617;
+  color: #a7f3d0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.78rem;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  position: relative;
+  border: 1px solid #1e293b;
+}
+
+.preview-css-actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.btn-copy-css,
+.btn-reset-css {
+  background: #334155;
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-copy-css:hover {
+  background: var(--perf-accent-blue);
+}
+
+.btn-reset-css:hover {
+  background: #475569;
+}
+
+/* ==========================================================================
+   SECCIÓN DE SERVICIOS ESTILO PERFORMANCE LAB
+   ========================================================================== */
+
+main {
+  padding-bottom: 0 !important;
+}
+
+.py-custom {
+  padding: var(--unit) 0;
+}
+.mb-custom {
+  margin-bottom: var(--unit);
+}
+.perf-services-section {
+  position: relative;
+}
+
+.perf-badge {
+  font-family: "grtsk-vf", sans-serif;
+    font-variation-settings: "slnt" 0, "wdth" 100, "wght" 400;
+    font-weight: 500;
+    letter-spacing: -0.07vw;
+    font-size: clamp(16px, 1vw, 2.3rem);
+    color: var(--perf-accent-blue-text);
+    border: rgba(128, 128, 128, 0.459) solid 1px;
+    display:inline-block;
+    max-width:fit-content;
+    padding:5px 20px 2px 20px;
+    margin: auto;
+  margin-bottom:30px;
+  font-weight: 600;
+}
+
+.perf-section-title {
+  font-family: "Origin", sans-serif;
+  font-size: clamp(1.2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--perf-text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.perf-section-subtitle {
+  color: var(--perf-text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* Grid Layout con bordes compartidos (usado por .perf-grid, .team-grid y .diff-grid) */
+.perf-grid,
+.team-grid,
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  border-top: 1px solid var(--perf-border-color);
+  border-left: 1px solid var(--perf-border-color);
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .perf-grid,
+  .team-grid,
+  .diff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  /* A partir de aquí cada grilla define su propia cantidad de columnas según su contenido */
+  .perf-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .perf-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Circle Markers on Grid Intersections (Replaces + with Círculo Autocool brand circles) */
+.perf-crosshair {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0; /* Oculta el signo + del HTML */
+  color: var(--perf-crosshair-color);
+  pointer-events: none;
+  z-index: 10;
+  transition: color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.perf-crosshair::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.perf-crosshair.top-left {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.perf-crosshair.top-right {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.perf-crosshair.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.perf-crosshair.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+/* Blue Active Circles */
+.perf-crosshair.active-blue {
+  color: var(--perf-accent-blue) !important;
+}
+
+.perf-crosshair.active-blue::before {
+  background-color: var(--perf-accent-blue);
+}
+
+/* Highlight de crosshairs al hover: mismo lenguaje de interacción en toda tarjeta
+   con esquinas .perf-crosshair (.site-card, .service-feature-card, tarjetas de blog) */
+.site-card:hover .perf-crosshair,
+.service-feature-card:hover .perf-crosshair,
+.blog-featured-card:hover .perf-crosshair,
+.blog-card:hover .perf-crosshair {
+  color: var(--perf-accent-blue) !important;
+}
+
+.site-card:hover .perf-crosshair::before,
+.service-feature-card:hover .perf-crosshair::before,
+.blog-featured-card:hover .perf-crosshair::before,
+.blog-card:hover .perf-crosshair::before {
+  background-color: var(--perf-accent-blue);
+}
+
+.site-card:hover .perf-crosshair.top-left,
+.service-feature-card:hover .perf-crosshair.top-left,
+.blog-featured-card:hover .perf-crosshair.top-left,
+.blog-card:hover .perf-crosshair.top-left { transform: translate(-50%, -50%) scale(1.3); }
+.site-card:hover .perf-crosshair.top-right,
+.service-feature-card:hover .perf-crosshair.top-right,
+.blog-featured-card:hover .perf-crosshair.top-right,
+.blog-card:hover .perf-crosshair.top-right { transform: translate(50%, -50%) scale(1.3); }
+.site-card:hover .perf-crosshair.bottom-left,
+.service-feature-card:hover .perf-crosshair.bottom-left,
+.blog-featured-card:hover .perf-crosshair.bottom-left,
+.blog-card:hover .perf-crosshair.bottom-left { transform: translate(-50%, 50%) scale(1.3); }
+.site-card:hover .perf-crosshair.bottom-right,
+.service-feature-card:hover .perf-crosshair.bottom-right,
+.blog-featured-card:hover .perf-crosshair.bottom-right,
+.blog-card:hover .perf-crosshair.bottom-right { transform: translate(50%, 50%) scale(1.3); }
+
+/* ==========================================================================
+   BATERÍA ESTÁNDAR DE CONTENIDOS DE .site-card
+   Mismas piezas (encabezado, imagen, título, texto, acción) para servicios,
+   equipo y especialidades: se editan una sola vez y cambian en todo el sitio.
+   ========================================================================== */
+
+/* Encabezado tipo ficha técnica: etiqueta · categoría · número */
+.site-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: monospace, Consolas, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 1.2rem;
+}
+
+.site-card-meta-label {
+  color: #a0a0a0;
+}
+
+.site-card-meta-category {
+  font-weight: 700;
+  color: var(--perf-text-dark);
+  letter-spacing: 0.12em;
+}
+
+.site-card-meta-num {
+  color: #a0a0a0;
+}
+
+/* Imagen o avatar principal */
+.site-card-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--perf-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.site-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  filter: brightness(0.96);
+}
+
+.site-card:hover .site-card-media img {
+  transform: scale(1.04);
+  filter: brightness(1.02);
+}
+
+/* Variante avatar (foto de perfil cuadrada, equipo) */
+.site-card-media--avatar {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--perf-border-color);
+  background-color: #f4f6f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-card-media--avatar img {
+  filter: none;
+  transition: transform 0.3s ease;
+}
+
+.site-card:hover .site-card-media--avatar img {
+  transform: scale(1.03);
+  filter: none;
+}
+
+/* Título de tarjeta */
+.site-card-title {
+  font-family: "Origin", sans-serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--perf-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+/* Variante para tarjetas grandes de 2 columnas (especialidades) */
+.site-card-title--lg {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+/* Texto descriptivo (bajo el título) */
+.site-card-text {
+  color: var(--perf-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+/* Cita destacada dentro de la tarjeta (testimonio, frase del equipo) */
+.site-card-quote {
+  font-size: 0.92rem;
+  color: #444444;
+  line-height: 1.55;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--perf-border-color);
+  font-style: italic;
+}
+
+/* Botón / acción al pie de la tarjeta */
+.site-card-action {
+  margin-top: auto;
+}
+
+.perf-btn-group {
+  display: inline-flex;
+  align-items: stretch;
+  text-decoration: none;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.perf-btn-main {
+  background-color: var(--perf-accent-blue);
+  color: var(--color-white);
+  font-family: monospace, Consolas, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease;
+}
+
+.perf-btn-icon {
+  background-color: var(--perf-accent-blue);
+  color: var(--color-white);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  transition: background-color 0.25s ease;
+}
+
+.perf-btn-icon i {
+  transition: transform 0.3s ease;
+}
+
+.perf-btn-group:hover .perf-btn-main,
+.perf-btn-group:hover .perf-btn-icon {
+  background-color: var(--perf-accent-blue-hover);
+}
+
+.perf-btn-group:hover .perf-btn-icon i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLL & SPLITTEXT STYLES
+   ========================================================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* splitText inline display */
+.perf-section-title div {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   LOGO GIGANTE DE FONDO EN EL CARRUSEL (DETRÁS DEL AUTO)
+   ========================================================================== */
+.carousel-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(240px, 36vw, 560px);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+  will-change: transform;
+}
+
+.carousel-bg-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.22));
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE WHATSAPP CON ANIMACIÓN DE RUEDA ACCIONADA
+   ========================================================================== */
+.whatsapp-float-wheel {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #25d366 0%, #128c7e 100%);
+  color: var(--color-white) !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  z-index: 9999;
+  text-decoration: none !important;
+  transition: transform 0.3s ease;
+  animation: wheelAccelerate 4.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  transform-origin: 50% 50%;
+}
+
+.whatsapp-float-wheel i {
+  display: block;
+}
+
+.whatsapp-float-wheel:hover {
+  animation: wheelAccelerateHover 0.6s linear infinite;
+}
+
+@keyframes wheelAccelerate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  12% {
+    /* Toma impulso hacia atrás como un vehículo al acelerar bruscamente */
+    transform: rotate(-40deg) scale(0.92);
+  }
+  38% {
+    /* Aceleración veloz tipo rueda girando a toda velocidad */
+    transform: rotate(360deg) scale(1.15);
+  }
+  62% {
+    /* Giro continuo con inercia de rotación */
+    transform: rotate(720deg) scale(1.06);
+  }
+  78% {
+    /* Frenada suave de la rueda */
+    transform: rotate(720deg) scale(1);
+  }
+  100% {
+    /* Pausa quieta antes del siguiente arranque */
+    transform: rotate(720deg) scale(1);
+  }
+}
+
+@keyframes wheelAccelerateHover {
+  0% {
+    transform: rotate(0deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.15);
+  }
+}
+
+/* ==========================================================================
+   MARQUEE DE OFERTAS DEL MES (AZUL AUTOCOOL)
+   ========================================================================== */
+.offers-marquee-section {
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+
+  z-index: 100;
+}
+
+.offers-marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.offers-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap:5px;
+  white-space: nowrap;
+  animation: offersMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.offers-marquee-container:hover .offers-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes offersMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.offer-marquee-item {
+    background-color: var(--color-brand-red);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.45rem 1.15rem;
+  font-family: "Origin", sans-serif;
+  font-size: 1rem;
+ 
+}
+
+.offer-badge {
+  background-color: var(--color-white);
+  color: var(--perf-accent-blue-text);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.offer-title {
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA LA PÁGINA NOSOTROS (QUIÉNES SOMOS)
+   ========================================================================== */
+.nosotros-hero {
+  padding-top: clamp(80px, 10vh, 130px);
+  padding-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gran Círculo Azul de Fondo en Hero Nosotros */
+.nosotros-hero-circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: clamp(340px, 80vw, 1700px);
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--perf-accent-blue);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.manifesto-box {
+  transition: transform var(--transition-slow);
+  background-color: var(--color-white);
+  border-left: 4px solid var(--perf-accent-blue);
+    translate: none;
+    rotate: none;
+    scale: none;
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.manifesto-box:hover {
+  transform: translateY(var(--lift-md));
+}
+
+.stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: transform var(--transition-slow), background-color var(--transition-slow), border-color var(--transition-slow);
+}
+
+.stat-card:hover {
+  transform: translateY(var(--lift-md));
+  background-color: rgba(var(--perf-accent-blue-rgb), 0.12) !important;
+  border-color: var(--perf-accent-blue) !important;
+}
+
+/* ==========================================================================
+   HEADER COMPACTO PARA SUBPÁGINAS DE SERVICIO (CPT)
+   ========================================================================== */
+.service-header-compact {
+  padding-top: clamp(85px, 11vh, 120px);
+  padding-bottom: 2rem;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--perf-border-color);
+  position: relative;
+  min-height: auto !important;
+  display: block;
+}
+.service-header-compact .title-marca {
+  font-size: clamp(1.2rem, 5vw, 2.8rem);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.service-title-compact {
+  font-family: "grtsk-vf", sans-serif;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--perf-text-dark);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   NUEVA SECCIÓN DE DESTACADOS/FEATURES CON CIRCULITOS CORNER (PERF-CROSSHAIR)
+   ========================================================================== */
+.service-features-section {
+  
+  padding: 1.75rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.service-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.service-feature-card {
+  background:white;
+  position: relative;
+  border: 1px solid var(--perf-border-color);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: background-color var(--transition-slow), transform var(--transition-slow), border-color var(--transition-slow);
+}
+
+.service-feature-card:hover {
+  border-color: var(--perf-accent-blue);
+  z-index: 5;
+  transform: translateY(var(--lift-sm));
+}
+
+.service-feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-feature-badge i {
+  font-size: 1.05rem;
+}
+
+.service-feature-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* Contenedor de Imagen Uniforme para Servicios */
+.service-image-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--perf-border-color);
+  overflow: hidden;color: white !important;
+  background-color: #f0f0f0;
+}
+
+.service-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-image-card:hover .service-image-img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   CHECKLIST "SERVICIOS INCLUIDOS" (páginas de servicio)
+   ========================================================================== */
+.service-checklist-card {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--perf-border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  height: 100%;
+}
+
+.service-checklist-title {
+  display: block;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--perf-text-muted);
+  margin-bottom: 1rem;
+}
+
+.service-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.service-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--perf-text-dark);
+}
+
+.service-checklist li i {
+  color: var(--color-brand-red);
+  font-size: 1.05rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Variante de dos columnas para listas con más de ~5 ítems */
+.service-checklist--grid {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .service-checklist--grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bloque de servicio (imagen + texto, o detalle) dentro de una misma sección,
+   para evitar el salto visual de secciones separadas con fondo distinto */
+.service-block + .service-block {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--perf-border-color);
+}
+
+/* ==========================================================================
+   TABLA DE VALORES / TARIFAS (páginas de servicio)
+   ========================================================================== */
+.service-price-list {
+  margin: 0;
+}
+
+.service-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--perf-border-color);
+}
+
+.service-price-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.service-price-label {
+  font-weight: 600;
+  color: var(--perf-text-dark);
+}
+
+.service-price-value {
+  font-weight: 800;
+  color: var(--color-brand-red);
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.service-price-group-title {
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--perf-accent-blue-text);
+  margin: 1.5rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--perf-border-color);
+}
+
+.service-price-group-title:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.service-price-note {
+  color: var(--perf-text-muted);
+}
+
+/* ==========================================================================
+   FACTSHEET DE SERVICIO — bloque único tipo ficha técnica
+   (reemplaza cards sueltas: todo el detalle de un servicio en un solo marco)
+   ========================================================================== */
+.factsheet {
+  border: 1.5px solid var(--perf-text-dark);
+  background: var(--color-white);
+}
+
+.factsheet-image {
+  display: block;
+  width: 100%;
+  height: clamp(160px, 24vw, 260px);
+  object-fit: cover;
+  border-bottom: 1.5px solid var(--perf-text-dark);
+}
+
+.factsheet-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  border-bottom: 1px solid var(--perf-border-color);
+}
+
+.factsheet-row:last-child {
+  border-bottom: none;
+}
+
+.factsheet-label {
+  padding: 1.15rem 1.4rem;
+  background: var(--color-surface-muted);
+  border-right: 1px solid var(--perf-border-color);
+  font-weight: 800;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--perf-text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.factsheet-value {
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.factsheet-value p {
+  margin: 0;
+  color: var(--perf-text-dark);
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.factsheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.55rem 2rem;
+}
+
+.factsheet-list--1col {
+  grid-template-columns: 1fr;
+}
+
+.factsheet-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--perf-text-dark);
+}
+
+.factsheet-list li::before {
+  content: "\2014";
+  color: var(--color-brand-red);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.factsheet-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--perf-border-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.factsheet-price-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.factsheet-price-row span:first-child {
+  color: var(--perf-text-dark);
+  font-size: 0.95rem;
+}
+
+.factsheet-price-value {
+  font-weight: 800;
+  color: var(--color-brand-red);
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.factsheet-price-group {
+  font-weight: 800;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--perf-accent-blue-text);
+  margin-top: 0.9rem;
+}
+
+.factsheet-price-group:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 767.98px) {
+  .factsheet-row {
+    grid-template-columns: 1fr;
+  }
+  .factsheet-label {
+    border-right: none;
+    border-bottom: 1px solid var(--perf-border-color);
+  }
+  .factsheet-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   BOTÓN CTA EN NAVBAR Y ESTILOS DE NAVEGACIÓN
+   ========================================================================== */
+.nav-cta-item {
+  display: flex;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+.btn-nav-blue {
+  background-color: var(--perf-accent-blue);
+  border: var(--perf-accent-blue) solid 1px;
+  color: var(--color-white) !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.52rem 1.35rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-nav-blue:hover {
+    border: black solid 1px;
+  background-color: transparent;
+  color: black !important;
+}
+
+@media (max-width: 991.98px) {
+  .nav-cta-item {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
+}
+
+/* Dropdown Menu de Servicios */
+.navbar .dropdown-menu {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #121215;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.navbar .dropdown-item {
+  color: #d0d0d8;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: rgba(var(--perf-accent-blue-rgb), 0.15);
+  color: var(--perf-accent-blue);
+}
+
+.navbar .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 0.4rem 0;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA COMPLETO MULTICOLUMNA (SITE FOOTER)
+   ========================================================================== */
+.site-footer {
+  background-color: #121215;
+  color: var(--color-muted-on-dark);
+  padding-top: 4rem;
+  padding-bottom: 0;
+  border-top: 3px solid var(--perf-accent-blue);
+  font-family: "Origin", sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.site-footer .container-fluid,
+.sub-footer .container-fluid {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@media (max-width: 767.98px) {
+  .site-footer .container-fluid,
+  .sub-footer .container-fluid {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.site-footer h4,
+.site-footer h5 {
+  color: var(--color-white);
+  font-family: "Origin", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.footer-logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.footer-widget p {
+  line-height: 1.65;
+  font-size: 0.93rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-links a {
+  color: var(--color-muted-on-dark);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--perf-accent-blue);
+  padding-left: 4px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.footer-contact-item i {
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* Sub-footer y Crédito Maggiore */
+.sub-footer {
+  background-color: #0a0a0c;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+}
+
+.maggiore-credit {
+  color: #888890;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.maggiore-credit strong {
+  color: var(--color-white);
+  transition: color 0.25s ease;
+}
+
+.maggiore-credit:hover,
+.maggiore-credit:hover strong {
+  color: var(--perf-accent-blue) !important;
+}
+
+/* ==========================================================================
+   ESTILOS PARA PÁGINAS DE OFERTAS Y CONTACTO
+   ========================================================================== */
+.contact-form-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  padding: 2.25rem;
+}
+
+/* Bootstrap redondea inputs y badges por defecto; el sitio solo usa esquinas
+   redondeadas en elementos tipo píldora, así que se anula aquí. */
+#contactForm .form-control,
+#contactForm .form-select {
+  border-radius: 0;
+}
+
+.badge {
+  border-radius: 0;
+}
+
+.btn-submit-primary {
+  background-color: var(--perf-accent-blue);
+  color: var(--color-white);
+  font-weight: 700;
+
+  font-size: 0.98rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-pill);
+  border: var(--perf-accent-blue) solid 1px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-submit-primary:hover {
+  background-color: transparent;
+  color: var(--color-white);
+  color: black;
+  border: solid black 1px;
+}
+
+
+.map-iframe-container {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border: 1px solid var(--perf-border-color);
+}
+
+/* Caja de datos destacados dentro de .site-card (horario, teléfono, etc.) */
+.info-box {
+  background-color: var(--color-surface-muted);
+  border-left: 3px solid var(--perf-accent-blue);
+}
+
+.info-box-whatsapp {
+  border-left-color: #25d366;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA MÓDULO BLOG Y ARTÍCULO SINGLE (CÍRCULO AUTOCOOL)
+   ========================================================================== */
+.blog-hero-section {
+  background-color: var(--color-white);
+  padding-top: clamp(85px, 11vh, 120px);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--perf-border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-search-box {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.blog-search-box .form-control {
+  background-color: var(--color-white);
+  border: 2px solid var(--perf-border-color);
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.blog-search-box .form-control:focus {
+  background-color: var(--color-white);
+  border-color: var(--perf-accent-blue);
+  outline: none;
+}
+
+.blog-search-box .search-icon {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--perf-accent-blue);
+  font-size: 1.25rem;
+  pointer-events: none;
+}
+
+/* Categorías Pill */
+.blog-categories-wrapper {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.category-pill {
+  background-color: var(--color-white);
+  color: var(--perf-text-dark);
+  border: 1px solid var(--perf-border-color);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.category-pill:hover,
+.category-pill.active {
+  background-color: var(--perf-accent-blue);
+  color: var(--color-white);
+  border-color: var(--perf-accent-blue);
+}
+
+/* Tarjeta Destacada */
+.blog-featured-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  transition: transform var(--transition-slow), border-color var(--transition-slow);
+}
+
+.blog-featured-card:hover {
+  transform: translateY(var(--lift-md));
+  border-color: var(--perf-accent-blue);
+}
+
+.blog-featured-img-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  height: 100%;
+}
+
+.blog-featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-featured-card:hover .blog-featured-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Grid de Artículos */
+.blog-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-slow);
+}
+
+.blog-card:hover {
+  transform: translateY(var(--lift-md));
+  border-color: var(--perf-accent-blue);
+}
+
+.blog-card-img-container {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+
+.blog-card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-img-container img {
+  transform: scale(1.06);
+}
+
+.blog-card-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--perf-text-dark);
+  margin-bottom: 0.6rem;
+  transition: color var(--transition-fast);
+}
+
+.blog-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card-title a:hover {
+  color: var(--perf-accent-blue);
+}
+
+.blog-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--perf-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.blog-card-footer {
+  border-top: 1px solid var(--perf-border-color);
+  padding-top: 0.9rem;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-author-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--perf-text-dark);
+}
+
+.blog-author-mini img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sidebar Widget */
+.blog-sidebar-widget {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.widget-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--perf-text-dark);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 2px solid var(--perf-accent-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.widget-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget-category-list li {
+  margin-bottom: 0.5rem;
+}
+
+.widget-category-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  color: var(--perf-text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  gap: 0;
+  transition: all var(--transition-fast);
+}
+
+.widget-category-list a:hover {
+  background-color: var(--color-surface-muted);
+  color: var(--perf-accent-blue);
+  padding-left: 1rem;
+}
+
+.widget-category-count {
+  background-color: var(--perf-border-color);
+  color: var(--perf-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.widget-post-item {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--perf-border-color);
+}
+
+.widget-post-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.widget-post-thumb {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.widget-post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.widget-post-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.widget-post-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--perf-text-dark);
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.widget-post-title:hover {
+  color: var(--perf-accent-blue);
+}
+
+.widget-post-date {
+  font-size: 0.78rem;
+  color: var(--perf-text-muted);
+}
+
+.widget-whatsapp-card {
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-ink-soft) 100%);
+  color: var(--color-white);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget-whatsapp-card .btn-whatsapp-side {
+  background-color: var(--perf-accent-blue);
+  color: var(--color-white);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.widget-whatsapp-card .btn-whatsapp-side:hover {
+  background-color: var(--perf-accent-blue-hover);
+  transform: translateY(var(--lift-sm));
+}
+
+/* Newsletter Box */
+.blog-newsletter-input {
+  border-radius: var(--radius-pill);
+  padding: 0.8rem 1.4rem;
+  border: none;
+  max-width: 320px;
+}
+
+/* ==========================================================================
+   ESTILOS PARA PÁGINA SINGLE (BLOG-SINGLE.HTML)
+   ========================================================================== */
+.blog-breadcrumb {
+  font-size: 0.88rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-breadcrumb a {
+  color: var(--perf-text-muted);
+  text-decoration: none;
+}
+
+.blog-breadcrumb a:hover {
+  color: var(--perf-accent-blue);
+}
+
+.blog-single-meta-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--perf-border-color);
+  border-bottom: 1px solid var(--perf-border-color);
+  margin-top: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--perf-text-muted);
+}
+
+.blog-single-author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.blog-single-author img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--perf-accent-blue);
+}
+
+.blog-toc-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  border-left: 4px solid var(--perf-accent-blue);
+  padding: 1.4rem;
+  margin: 1.75rem 0 2.2rem 0;
+}
+
+.blog-toc-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--perf-text-dark);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.blog-toc-list li {
+  margin-bottom: 0.45rem;
+}
+
+.blog-toc-list a {
+  color: var(--perf-text-dark);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.blog-toc-list a:hover,
+.blog-toc-list a.active {
+  color: var(--perf-accent-blue);
+  transform: translateX(4px);
+}
+
+.blog-content-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--perf-text-muted);
+}
+
+.blog-content-body h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--perf-text-dark);
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 90px;
+}
+
+.blog-content-body h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--perf-text-dark);
+  margin-top: 1.7rem;
+  margin-bottom: 0.8rem;
+  scroll-margin-top: 90px;
+}
+
+/* Estilo genérico para el bloque nativo "Cita" (blockquote) de WordPress */
+.blog-content-body blockquote {
+  background-color: #eff6ff;
+  border-left: 4px solid var(--perf-accent-blue);
+  padding: 1.25rem 1.4rem;
+  margin: 1.5rem 0;
+  color: var(--perf-accent-blue-text);
+}
+
+.blog-content-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilo genérico para el bloque nativo "Tabla" de WordPress: sin clases especiales */
+.blog-content-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.blog-content-body table th,
+.blog-content-body table td {
+  border: 1px solid var(--perf-border-color);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.blog-content-body table thead th {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.blog-content-body table tbody tr:nth-child(even) {
+  background-color: var(--color-surface-muted);
+}
+
+.blog-author-bio-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.blog-author-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--perf-accent-blue);
+  flex-shrink: 0;
+}
+
+.blog-cta-banner {
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.blog-cta-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--perf-accent-blue) 0%, var(--bs-danger) 100%);
+}
+
+@media (max-width: 767.98px) {
+  .blog-hero-section {
+    padding-top: 95px;
+    padding-bottom: 2.5rem;
+  }
+  .blog-featured-img-wrap {
+    min-height: 200px;
+  }
+  .blog-author-bio-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .blog-single-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN NUESTRO EQUIPO (EQUIPO HUMANO & TEASER)
+   ========================================================================== */
+
+/* Estructura base (columnas 1/2) compartida con .perf-grid; ver sección de servicios */
+@media (min-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 991px) {
+.navbar .container {
+
+    border-radius: 5px;
+    margin: auto auto;
+    max-width: calc(100% - 15px);
+
+  }
+}
+
+.team-teaser-avatars {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.team-teaser-avatar-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  padding: 0.4rem 2rem 0.4rem 0.4rem;
+  border-radius: var(--radius-pill);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.team-teaser-avatar-card:hover {
+  transform: translateY(var(--lift-sm));
+  border-color: var(--perf-accent-blue);
+}
+
+.team-teaser-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--perf-accent-blue);
+}
+
+.team-teaser-avatar-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--perf-text-dark);
+  line-height: 1.1;
+}
+
+.team-teaser-avatar-role {
+  font-size: 0.72rem;
+  color: var(--perf-text-muted);
+  display: block;
+}
+
+/* Teaser de Equipo en Home */
+.team-teaser-box {
+  background: linear-gradient(135deg, var(--color-white) 0%, #f8fafc 100%);
+  border: 1px solid var(--perf-border-color);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   SECCIÓN ESPECIALIDADES DIFERENCIADORAS (POST-HERO)
+   ========================================================================== */
+
+.diff-section {
+  position: relative;
+  background-color: #f8fafc;
+  border-top: 1px solid var(--perf-border-color);
+  border-bottom: 1px solid var(--perf-border-color);
+}
+
+/* Estructura base (columnas 1/2) compartida con .perf-grid/.team-grid; ver sección de servicios */
+@media (min-width: 992px) {
+  .diff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjeta única compartida por servicios (Home), equipo (Nosotros) y
+   especialidades diferenciadoras: un solo lugar para editar el diseño de
+   cualquier tarjeta con esquinas .perf-crosshair en el sitio. */
+.site-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--perf-border-color);
+  border-bottom: 1px solid var(--perf-border-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: background-color var(--transition-slow), transform var(--transition-slow), border-color var(--transition-slow);
+  z-index: 1;
+}
+
+.site-card:hover {
+  background-color: var(--color-white);
+  border-color: var(--perf-accent-blue);
+  transform: translateY(var(--lift-md));
+  z-index: 5;
+}
+
+.diff-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.diff-icon-box {
+  width: 58px;
+  height: 58px;
+  background-color: #eef5ff;
+  border: 1px solid rgba(var(--perf-accent-blue-rgb), 0.2);
+  color: var(--perf-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.diff-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.diff-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--perf-text-dark);
+  line-height: 1.45;
+}
+
+.diff-feature-item i {
+  color: var(--perf-accent-blue);
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   UTILIDADES DE TEXTO (reemplazan estilos inline duplicados en varias páginas)
+   Colocadas al final del archivo a propósito: garantiza que ganen la cascada
+   frente a clases de sección con la misma especificidad (ej. .perf-section-subtitle).
+   ========================================================================== */
+.section-lead {
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.section-lead-narrow {
+  max-width: 600px;
+}
+
+.text-body-lg {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.text-body-sm {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SINGLE VEHICLE DETAIL PAGE & GALLERY STYLES (TECHNICAL AUTOCOOL SYSTEM)
+   ========================================================================== */
+.vehicle-gallery-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid var(--perf-border-color);
+  height: fit-content;
+  margin-bottom: 0;
+}
+
+.vehicle-main-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vehicle-main-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.vehicle-thumbs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  gap: 8px;
+  padding: 12px;
+  background: #f8fafc;
+  border-top: 1px solid var(--perf-border-color);
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.vehicle-thumb-item {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--perf-border-color);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.vehicle-thumb-item:hover,
+.vehicle-thumb-item.active {
+  opacity: 1;
+  border-color: var(--perf-accent-blue);
+  box-shadow: 0 0 0 1px var(--perf-accent-blue);
+}
+
+
+.vehicle-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.vehicle-spec-card {
+  background: #ffffff;
+  border: 1px solid var(--perf-border-color);
+  padding: 0.85rem 0.75rem;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.vehicle-spec-card:hover {
+  border-color: var(--perf-accent-blue);
+}
+
+.vehicle-spec-card .spec-label {
+  font-family: monospace, Consolas, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--perf-text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.vehicle-spec-card .spec-value {
+  font-family: "Origin", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--perf-text-dark);
+}
+
+.static-card,
+.static-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+
